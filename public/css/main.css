@@ -1,0 +1,193 @@
+/*==================== body ====================*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background: #f0f0f0;
+  }
+  button {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    background: #e99fb6;
+    color: #fff;
+    border: none;
+    outline: none;
+  }
+  button:hover {
+    border-radius: 15px;
+    transition: 0.3s;
+  }
+  #number {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #f1f21923;
+    padding: 0px 6px;
+    color: #dc08c6;
+  }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+
+  /*==================== nav============= */
+  
+  
+  nav {
+    padding-top: 9vh;
+    overflow: hidden;
+    justify-content: space-around;
+    background-position: top;
+    background-size: cover;
+    display: flex;
+    color: #576574;
+    align-items: center;
+  }
+  
+  nav .menu {
+    justify-content: flex-end;
+    width: 100%;
+  }
+  nav .menu ul {
+    list-style: none;
+    position: fixed;
+    background: #ffffffb0;
+  }
+  nav .menu ul a {
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
+    margin-left: 40px;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 20px;
+    color: #3f55bf;
+  }
+  nav .menu ul li a:hover {
+    color: #4056bf;
+    border-bottom: solid #4056bf 2px;
+  }
+ 
+  /* ==========================footer =======================*/
+  footer {
+    margin: calc(var(--gap) * 5) 0 0 0;
+    padding: 0 0 var(--gap);
+    position: relative;
+  }
+  #foot .foot-logo {
+    position: absolute;
+      /* fill: url(../img/rsz_logo.png); */
+      /* background: url(../img/rsz_logo.png); */
+      background: url(../img/logo150x80.png);
+      width: 150px;
+      height: 80px;
+      z-index: -1;
+      top: -70px;
+      left: var(--gap);
+  }
+  #foot {
+    background: #fdf2ff;
+    background-size: cover;
+    background-position: right;
+    height: 100%;
+    width: 100%;
+    line-height: 30px;
+    padding-top: 40px;
+    color: #3f55bf;
+  }
+  #foot .foot-wrap {
+    display: grid;
+    grid-template-columns: 2.5fr 2fr;
+    gap: var(--gap);
+    margin-bottom: 20px;
+  }
+  #foot .foot-wrap .contain {
+    padding-right: 6rem;
+    overflow: hidden;
+    height: 150px;
+  }
+  #foot .foot-form-wrap {
+    height: 200px;
+    background: #c1b5ffde;
+    background: #e1deff;
+    background: #1735c370;
+    background: #a9d2ff;
+    padding: 1.5rem;
+    margin: -4rem 0 0;
+    position: relative;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  #foot .foot-form-wrap:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 100%;
+    width: 17px;
+    height: 23px;
+    background: #909090;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  }
+  #foot  input {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+    outline: none;
+  }
+  #foot input:nth-child(4) {
+    background: #e99fb6;
+  }
+  
+  #foot .row {
+    display: flex;
+  }
+  
+  #foot span {
+    font-size: 23px;
+    font-weight: 600;
+  }
+  #foot span:nth-child(2) {
+    color: #e58e26;
+  }
+  
+  #foot .row ul {
+    list-style: none;
+  }
+  #foot .row a {
+    text-decoration: none;
+    color: #576574;
+    line-height: 30px;
+    padding-right: 20px;
+  }
+  #foot .row a:hover {
+    color: #4056bf;
+  }
+  
+  #foot .foot {
+    border-top: solid #576574 1px;
+    bottom: 0;
+    text-align: center;
+    height: 15px;
+    color: #576574;
+  }
+  @media (max-width: 850px) {
+  }
+  
+  @media (max-width: 650px) {
+    #foot .row {
+      flex-direction: column;
+      padding-left: 30px;
+    }
+    #foot .col {
+      padding-bottom: 20px;
+    }
+  }
+ #foot .payment{
+    padding: 2rem;
+ }
