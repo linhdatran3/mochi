@@ -74,5 +74,5 @@ app.use('/',indexRouter)
 app.use('/cart',cartRouter)
 app.use('/user',userRouter)
 
-app.listen(3000)
-//app.listen(process.env.STR_CONNECT || 3000)
+//app.listen(3000)
+app.listen(process.env.STR_CONNECT || 3000)
