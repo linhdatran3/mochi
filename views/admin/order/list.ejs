@@ -15,7 +15,16 @@
                     <tr>
                     <td><%= order.user.name %></td>
                     
-                    <td><%= order.cart.items[0].item.name%></td>
+                    <td><% order.cart.items.map(x=>{%>
+                        <ul>
+                            <li><%=x.item.name %> ( <%=x.qty %> )</li>
+                        </ul>
+
+                    <%})
+                        
+                        
+                        
+                        %></td>
                     <td><%= order.cart.total_price %></td>
                     <td><%= order.created_at %></td>
                     

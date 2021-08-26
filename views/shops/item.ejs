@@ -1,0 +1,109 @@
+<div class="container ">
+    <div class="row">
+        <div class="container">
+            <div class="row ">
+                <div class="container  card card-outline-secondary" style="display: flex;background-color:white">
+                    <div class="row">
+
+                        <div class="col-lg-6">
+                            <img class="card-img-top img-fluid"
+                                style="max-width:500px;max-height: 500px; width: 100%; height:100%;margin-top:2em; border-radius: 8px;"
+                                alt="" src="<%= product.image %>">
+                        </div>
+                        <div class="col-lg-1">
+
+                        </div>
+                        <div class="col-lg-5">
+
+                            <div class="card-body">
+                                <h3 class="card-title" class="name"><%= product.name %></h3>
+                                <div style="display: flex">
+                                    <h4 class = "cost"></h4>
+                                    <p><%= product.price %> VNĐ</p>
+                                    <i style="color:rgb(228, 169, 213); font-size: 30px;" class="fas fa-shopping-cart"></i>
+                            </div>
+                            <br>
+                            <div style="display: flex">
+                                <strong style="margin-right: 10px">Tên danh mục: </strong>
+                                <p class="category"> <%= product.category.name %></p>
+                            </div>
+                            <div style="display: flex">
+                                <strong style="margin-right: 10px">Số lượng: <%= product.quantity %></strong>
+                                <p class="quantity"></p>
+                            </div>
+                            <div style="display: flex">
+                                <strong style="margin-right: 10px">Chiều dài (cm): </strong>
+                                <p class="length"></p>
+                            </div>
+                            <div style="display: flex">
+                                <strong style="margin-right: 10px">Chiều rộng (cm): </strong>
+                                <p class="width"> </p>
+                            </div>
+                            <div style="display: flex">
+                                <strong style="margin-right: 10px">Xuất xứ: </strong>
+                                <p class="origin"> </p>
+                            </div>
+                                <strong>Mô tả:</strong>
+                                <p class="describe"> <%= product.info %></p>
+                                <div class="card-footer" style="display: flex">
+                                    <div style="margin-right: 10px" class="star"></div>
+                                    <i style="color:rgb(227, 238, 67);margin-right: 10px" class="fas fa-star"></i>
+                                    <div class="people"></div>
+                                    <p style="margin-left: 7px">đánh giá</p>
+                                </div>
+                                <br>
+                                <!-- Nhấp vào mua ngay dẫn đến giỏ hàng -->
+                                <button type="button" class="addCart btn btn-success"><a href="/cart/add/<%= product._id %>">Mua ngay</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /row -->
+            <br>
+            <div class="row" style="margin-top:0.5em;">
+                <div class="card card-outline-secondary my-4" style="width: 100%">
+                    
+                    <div style="background-color: white;" class="card-header">
+                        <h3>Bình luận</h3>
+                    </div>
+                    <div class="card-body text-center"style="padding: 0; margin: 0; display: flex; margin-left: 30px">
+                        <fieldset class="rating" style="font-size: 10px;margin: 0; height: 40px;"> <input type="radio" class="star5" name="rating"
+                                value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label> <input type="radio"
+                                id="star4half" name="rating" value="4.5" /><label class="half" for="star4half"
+                                title="Pretty good - 4.5 stars"></label> <input type="radio" id="star4" name="rating" value="4" /><label
+                                class="full" for="star4" title="Pretty good - 4 stars"></label> <input type="radio" id="star3half"
+                                name="rating" value="3.5" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label> <input
+                                type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3"
+                                title="Meh - 3 stars"></label> <input type="radio" id="star2half" name="rating" value="2.5" /><label
+                                class="half" for="star2half" title="Kinda bad - 2.5 stars"></label> <input type="radio" id="star2"
+                                name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                            <input type="radio" id="star1half" name="rating" value="1.5" /><label class="half" for="star1half"
+                                title="Meh - 1.5 stars"></label> <input type="radio" id="star1" name="rating" value="1" /><label
+                                class="full" for="star1" title="Sucks big time - 1 star"></label> <input type="radio" id="starhalf"
+                                name="rating" value="0.5" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                            <input type="radio" class="reset-option" name="rating" value="reset" />
+                        </fieldset>
+                        <span class="myratings" id="myratings">0</span>
+                    
+                    </div>
+                    <div style="display: flex;margin-left: 1em;">
+                        
+                        <textarea id="usercomment" style="width: 70%; margin-left: 10px;margin-right: 10px;"></textarea>
+                        <button type="button" class="btn btn-success" onclick=BinhLuan()>Bình luận</button>
+                    </div>
+                    <hr>
+
+                    <div class="card-body" id="commentList">
+                        
+                    </div>
+                </div>
+
+            </div>
+            <!-- row -->
+        </div>
+        <!-- container           -->
+    </div>
+    <!-- /row -->
+
+</div>

@@ -7,6 +7,7 @@ const session=require('express-session')
 const passport=require('passport')
 require('./models/passportModel')(passport)
 const flash=require('express-flash')
+const MongoStore = require("mongo-store")
 
 const adminCategoryRouter=require('./routes/adminCategory')
 const adminProductRouter=require('./routes/adminProduct')
@@ -32,25 +33,6 @@ app.use(express.static('public'))
 
 app.use(express.json());
 
-app.use(express.urlencoded({ limit: '10mb',extended: false }))
-app.use(methodOverride('_method'))
-app.use(session({
-  secret: 'mysecret',
-  resave: false,
-  saveUninitialized: false,
-  //  store: MongoStore.create({
-  //     mongoUrl: STR_CONNECT
-  //   }),
-  cookie: { maxAge: 20*120*60*60}
-}));
-
-app.use((req, res, next) => {
-  res.locals.session = req.session;
-  next();
-})
-app.use(passport.initialize())
-app.use(passport.session())
-
 const connectFunction=async()=>{
 try{
     await mongoose.connect(process.env.STR_CONNECT,{
@@ -65,6 +47,23 @@ try{
 }}
 connectFunction()
 
+
+app.use(express.urlencoded({ limit: '10mb',extended: false }))
+app.use(methodOverride('_method'))
+app.use(session({
+  secret: 'mysecret',
+  resave: false,
+  saveUninitialized: false,
+  
+  cookie: { maxAge: 20*120*60*60}
+}));
+
+app.use((req, res, next) => {
+  res.locals.session = req.session;
+  next();
+})
+app.use(passport.initialize())
+app.use(passport.session())
 
 
 app.use('/admin',adminBaseRouter)

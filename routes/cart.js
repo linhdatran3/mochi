@@ -123,7 +123,7 @@ router.get('/success',(req,res)=>{
 })
 router.post('/order',check,async(req,res)=>{
     try{
-        const cart=new cartModel(req.session.cart)
+        const cart=new cartModel(req.session.cart ? req.session.cart : {items:[]})
         const order=new orderModel({
             user:req.user,
             cart:cart,
@@ -136,7 +136,7 @@ router.post('/order',check,async(req,res)=>{
         res.redirect('/')
     }catch(e){
         console.log(e)
-        res.redirect('/cart/checkout')
+        res.redirect('/')
     }
     
 })

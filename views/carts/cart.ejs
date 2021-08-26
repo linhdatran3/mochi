@@ -6,6 +6,7 @@
             <th>Price</th>
             <th>Image</th>
             <th>Edit</th>
+            <th>Total</th>
             <th>Delete</th>
         </tr>
         <%
@@ -27,6 +28,9 @@
                        
                     </div>
                 </td>
+                <td>
+                    <span id="t1<%= x.id %>"><span id="t2<%= x.id %>"> <%= x.item.price*x.qty %></span></span>
+                   </td>
                 <td> 
     
                     <form action="/cart/<%= x.id %>?_method=DELETE" method="POST" data-id="<%= x.id %>" class="deleteFormCart">
@@ -59,14 +63,12 @@
         </div>
         <div class="col-lg-6">
             <div class="shoping__checkout" style="display: flex;">
-                <h3>TOTAL: </h3>
+                <h3>Total:</h3>
                 <h3 id="total1" style="color: red;"><span id="total2"><%= total_price %></span></h3>
                
             </div>
             <a href="/cart/checkout" class="primary-btn">PROCEED TO CHECKOUT</a>
         </div>
     </div>
-    <h1 id="total1" style="right: 0;"><span id="total2">Total <%= total_price %></span></h1>
-
-    <a href="/cart/checkout">checkout</a>
+   
 </div>

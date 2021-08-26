@@ -1,0 +1,27 @@
+<div class="container w-50 mt-5" style="border-style: outset;border-width: 5px;
+padding-top: 2em;
+background-image: none;
+background-color: white;">
+    <h1>Register new user</h1>
+    <form action="/user/register" method="POST">
+        <div class="form-floating mb-3">
+            <label for="floatingInput">User Name</label>
+            <input type="text" class="form-control" name="name" placeholder="Linh Đa">
+            
+        </div>
+        <div class="form-floating mb-3">
+            <label for="floatingInput">Email</label>
+            <input type="email" class="form-control" name="email" placeholder="Email">
+            
+        </div>
+        <div class="form-floating mb-3">
+            <label for="floatingInput">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+        </div>
+          
+        <div class="form-floating mb-3" style="text-align: center;">
+            <button type="submit" class="btn btn-info Nut">Đăng ký</button>
+        </div>
+          
+    </form>
+</div>

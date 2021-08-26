@@ -21,6 +21,7 @@ $('.addCart').click(function(event){
         const href=this.href
         const id=this.id
         const qty2="#qty2"+id
+        const t2="#t2"+id
         const tr_cart_id= "#tr_cart_"+ id
         console.log("reduce")
         $.ajax({
@@ -31,6 +32,7 @@ $('.addCart').click(function(event){
               swal("Edit successful!", "continute!", "success");
               $("#total1").load(root+"/cart #total2");
               $("#qty"+id).load(root+"/cart "+qty2);
+              $("#t1"+id).load(root+"/cart "+t2);
               $("#infoNumber").load(root+"/cart #numberCart");
               if($(qty2).text()==='1'){
                 $(tr_cart_id).empty();
@@ -44,6 +46,7 @@ $('.addCart').click(function(event){
         const href=this.href
         const id=this.id
         const qty2="#qty2"+id
+        const t2="#t2"+id
         console.log("increase")
         $.ajax({
             url:href,
@@ -53,6 +56,8 @@ $('.addCart').click(function(event){
               swal("icrease 1 successful!", "continute!", "success");
               $("#total1").load(root+"/cart #total2");
               $("#qty"+id).load(root+"/cart "+qty2);
+              $("#t1"+id).load(root+"/cart "+t2);
+
             }
           })
     })
@@ -80,6 +85,7 @@ $('.addCart').click(function(event){
       const action=$(this).attr('action')
         const id=$(this).data("id")
         const qty2="#qty2"+id
+        const t2="#t2"+id
         const tr_cart_id= "#tr_cart_"+ id
         $.ajax({
             url:action,
@@ -89,6 +95,7 @@ $('.addCart').click(function(event){
               swal("Edit successful!", "continute!", "success");
               $("#total1").load(root+"/cart #total2");
               $("#qty"+id).load(root+"/cart "+qty2);
+              $("#t1"+id).load(root+"/cart "+t2);
               $("#infoNumber").load(root+"/cart #numberCart");
               if($(qty2).text()==='1'){
                 $(tr_cart_id).empty();
@@ -101,6 +108,7 @@ $('.addCart').click(function(event){
       const action=$(this).attr('action')
       const id=$(this).data("id")
       const qty2="#qty2"+id
+      const t2="#t2"+id
       $.ajax({
           url:action,
           type:'PUT',
@@ -109,6 +117,7 @@ $('.addCart').click(function(event){
             swal("Icrease successful!", "continute!", "success");
             $("#total1").load(root+"/cart #total2");
             $("#qty"+id).load(root+"/cart "+qty2);
+            $("#t1"+id).load(root+"/cart "+t2);
           }
         })
     })
