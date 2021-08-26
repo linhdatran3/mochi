@@ -1,0 +1,31 @@
+<div class="container w-50 mt-5">
+    <h1>Register new user / admin</h1>
+    <form action="/admin/register" method="POST">
+        <div class="form-floating mb-3">
+            <label for="floatingInput">User Name</label>
+            <input type="text" class="form-control" name="name" placeholder="Linh Đa">
+            
+        </div>
+        <div class="form-floating mb-3">
+            <label for="floatingInput">Email</label>
+            <input type="email" class="form-control" name="email" placeholder="Email">
+            
+        </div>
+        <div class="form-floating mb-3">
+            <label for="floatingInput">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+           
+        </div>
+        <div class="form-floating mb-3">
+            <select name="role" id="">
+                <option value="user">USER</option>
+                <option value="admin">ADMIN</option>
+            </select>
+        </div>
+        
+        <div class="form-floating mb-3">
+            <input type="submit" class=" btn btn-primary"  value="Đăng ký">
+        </div>
+          
+    </form>
+</div>

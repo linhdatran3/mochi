@@ -1,0 +1,49 @@
+<div class="container w-50 mt-5">
+    <h1>Add Product</h1>
+    <form action="/admin/product/" method="POST">
+        <div class="form-floating mb-3">
+            <label for="floatingInput">Product Name</label>
+            <input type="text" class="form-control" value="<%= product.name %>" name="name" placeholder="Product name">
+           
+        </div>
+        <div class="form-floating mb-3">
+            <label for="floatingInput">Information</label>
+            <input type="text" class="form-control" value="<%= product.info %>"  name="info" placeholder="Information">
+           
+        </div>
+        <div class="form-floating mb-3">
+            <label for="floatingInput">price</label>
+            <input type="text" class="form-control" value="<%= product.price %>"  name="price" placeholder="price">
+          
+        </div>
+        <div class="form-floating mb-3">
+            <label for="floatingInput">quantity</label>
+            <input type="text" class="form-control" value="<%= product.quantity %>"  name="quantity" placeholder="quantity">
+       
+        </div>
+        <div class="form-floating mb-3">
+            <label for="floatingInput">Category</label>
+            <select name="category">
+                <%
+                categories.map(category=>{%>
+                    <option value="<%= category.id %>"><%= category.name %></option>
+                <%})
+                %>
+                
+                
+              </select>
+        </div>
+        <div class="form-floating mb-3">
+            <label for="floatingInput">Image</label>
+            <input type="file" class="filepond"   name="image" placeholder="quantity">
+           
+        </div>
+        
+       
+          
+        <div class="form-floating py-5 px-5">
+            <input type="submit" class=" btn btn-primary"  value="ADD">
+        </div>
+          
+    </form>
+</div>

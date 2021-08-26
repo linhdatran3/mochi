@@ -1,0 +1,72 @@
+<div class="container mt-5 cart">
+   
+    <table class="table table-hover">
+        <tr>
+            <th> Name</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <%
+        cart.map(x=>{%>
+            
+            <tr id="tr_cart_<%= x.id %>">
+                <td><%= x.item.name %></td>
+                <td><%= x.item.price %></td>
+                <td><img src="<%= x.item.image %>" alt="" width="50px"></td>
+                <td>
+                    <div class="edit" style="display: flex;">
+                        <form action="/cart/reduce/<%= x.id %>?_method=PUT" method="POST" data-id="<%= x.id %>" class="reduceFormCart">
+                            <input type="submit" value="-" class="btn " >
+                        </form>
+                        <span id="qty<%= x.id %>"><span id="qty2<%= x.id %>"><%= x.qty %></span></span>
+                        <form action="/cart/increase/<%= x.id %>?_method=PUT" method="POST" data-id="<%= x.id %>" class="increaseFormCart">
+                            <input type="submit" value="+" class="btn " >
+                        </form>
+                       
+                    </div>
+                </td>
+                <td> 
+    
+                    <form action="/cart/<%= x.id %>?_method=DELETE" method="POST" data-id="<%= x.id %>" class="deleteFormCart">
+                        <input type="submit" value="Delete" class="btn btn-danger" >
+                    </form>
+                </td>
+            </tr>
+        <%})
+        %>
+        
+            
+    </table>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="shoping__cart__btns">
+                <a href="/shop" class="primary-btn cart-btn">CONTINUE SHOPPING</a>
+                
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="shoping__continue">
+                <div class="shoping__discount">
+                    <h5>Discount Codes</h5>
+                    <form action="#">
+                        <input type="text" placeholder="Enter your coupon code">
+                        <button type="submit" class="site-btn">APPLY COUPON</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="shoping__checkout" style="display: flex;">
+                <h3>TOTAL: </h3>
+                <h3 id="total1" style="color: red;"><span id="total2"><%= total_price %></span></h3>
+               
+            </div>
+            <a href="/cart/checkout" class="primary-btn">PROCEED TO CHECKOUT</a>
+        </div>
+    </div>
+    <h1 id="total1" style="right: 0;"><span id="total2">Total <%= total_price %></span></h1>
+
+    <a href="/cart/checkout">checkout</a>
+</div>
